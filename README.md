@@ -34,3 +34,49 @@ Welcome to **@efeStrategy**, the central hub for strategic development, collabor
    ```bash
    git clone https://github.com/efeStrategy/efeStrategy.git
    cd efeStrategy
+   
+npm install pi-nodejs
+
+<script src="https://sdk.minepi.com/pi-sdk.js"></script>
+
+node chatbot/efeStrategyPi.js
+
+const Pi = require('pi-nodejs');
+
+Pi.init({ appId: 'YOUR_APP_ID' });
+
+Pi.createPayment({
+  amount: 10,
+  memo: "Swap transaction via efenexus.pi",
+  metadata: { strategy: "yield_optimization" }
+}).then(payment => {
+  console.log("Payment created:", payment);
+}).catch(err => {
+  console.error("Payment failed:", err);
+});
+
+git checkout -b feature/your-strategy
+
+git commit -m "Add new DeFi strategy"
+git push origin feature/your-strategy
+
+### How to Use
+1. **Create the Repository**:
+   - Go to GitHub and create a new repository under `@efeStrategy` named `efeStrategy`.
+   - Copy the above `README.md` content into the repository’s `README.md` file.
+
+2. **Set Up Initial Structure**:
+   Create the following directories and files to kickstart development:
+   ```bash
+   mkdir chatbot src docs
+   touch chatbot/efeStrategyPi.js src/payment.js docs/CONTRIBUTING.md LICENSE
+
+   MIT License
+
+Copyright (c) 2025 efeStrategy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy...
+
+git add .
+git commit -m "Initialize efeStrategy repo with README and basic structure"
+git push origin main
